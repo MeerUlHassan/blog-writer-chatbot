@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY")
 
 st.set_page_config(page_title="Blog Writer ChatBot", page_icon="✍️")
 st.title("✍️ AI Blog Writer ChatBot 🚀")
