@@ -26,7 +26,7 @@ with st.sidebar:
     )
 
 def initialize_agents():
-    st.secrets.get("OPENAI_API_KEY") == OPENAI_API_KEY
+    os.environ["OPENAI_API_KEY"] == OPENAI_API_KEY
     blog_writer = BlogWriter().graph
 
     if len(OPENAI_API_KEY) < 1:
