@@ -124,4 +124,4 @@ class BlogWriter:
 
         self.memory.save_context(inputs={"input": state["topic"]}, outputs={"output": str(self.blog)})
         pdf_name = generate_pdf(self.blog)
-        return {"response": "Here is your edited essay! ", "blog": self.blog, "pdf_name": f"{pdf_name}"}
+        return {"response": "Here is your edited blog! ", "blog": self.blog, "pdf_name": f"{pdf_name}"}
