@@ -20,7 +20,7 @@ if "messages" not in st.session_state:
 with st.sidebar:
     st.subheader("Generate professional, comprehensive, and visually appealing blogs on any topic!")
     st.info(
-        " * This app uses the OpenAI API to generate text.\n\n"
+        " * This app uses the OpenAI API to generate content.\n\n"
         " * The app saves your writing in a well-organized PDF format.\n\n"
         " * Writing a blog may take some time, so please be patient (approximately 1-2 minutes)."
     )
