@@ -8,7 +8,6 @@ def search_wikipedia(query: str) -> str:
     """Run Wikipedia search and get page summaries."""
     page_titles = wikipedia.search(query)
     summaries = []
-
     for page_title in page_titles[:3]:  # First 3 results
         try:
             wiki_page = wikipedia.page(title=page_title, auto_suggest=False)
@@ -22,7 +21,6 @@ def search_wikipedia(query: str) -> str:
         return "No good Wikipedia Search Result was found"
 
     return "\n\n".join(summaries)
-
 
 @tool("Webpage Scraping Tool")
 def scrap_webpage(target_url):

@@ -1,7 +1,15 @@
 from crewai import Agent, Task, Crew, Process
-from extra_tools import search_wikipedia, scrap_webpage
+from crewai_tools import SerperDevTool
 from pydantic import BaseModel, Field
 from typing import List, TypedDict
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+os.environ["SERPER_API_KEY"] = os.getenv("SERPER_API_KEY")
+
+search_tool = SerperDevTool()
 
 class Paragraph(TypedDict):
     sub_header: str
@@ -58,7 +66,7 @@ class CrewClass:
                 "4. Include SEO keywords and relevant data or sources."
             ),
             expected_output="A comprehensive document with an outline, audience analysis, SEO keywords, and resources.",
-            tools = [search_wikipedia, scrap_webpage],
+            tools = [search_tool],
             agent=self.researcher,
         )
 
